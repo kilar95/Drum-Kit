@@ -1,21 +1,3 @@
-/* chiamo la funzione quando clicco sul primo bottone della pagina (w) */
-// document.querySelector("button").addEventListener("click", function() {
-//   alert("I got clicked")
-// });
-
-
-
-// se voglio chiamare la funzione su tutti i bottoni:
-/* creo un array dei bottoni e ne calcolo la lunghezza*/
-// let arreyLength = document.querySelectorAll(".drum").length;
-//
-// for (i=0, i < arreyLength, i++) {
-//   document.querySelectorAll(".drum")[i].addEventListener("click", clckHandle);
-// }
-
-// oppure posso usare il metodo forEach
-
-// Detecting Button Press
 let array = document.querySelectorAll(".drum");
 
 array.forEach(function(button) {button.addEventListener("click", function() {
@@ -25,7 +7,7 @@ array.forEach(function(button) {button.addEventListener("click", function() {
   })
 });
 
-// Detecting keyboard Press
+
 document.addEventListener("keydown", function(event) {
 
   playSound(event.key);
@@ -71,12 +53,10 @@ function playSound(key) {
 }
 
 
-// tramite questa funzione dobbiamo trovare il pulsante corrispondente alla chiave azionata o al bottone cliccato dall'utente, per poi procedere con l'applicare lo stile desiderato
-// (vedi classe .pressed sul file css)
 function animation(currentkey) {
 
   let activeButton = document.querySelector("." + currentkey);
-  activeButton.classList.add("pressed");  /*dopo un certo periodo di tempo la classe va tolta altrimenti il tasto conserverà l'opacità anche quando non è più premuto*/
+  activeButton.classList.add("pressed");  
 
   setTimeout(function () {
     activeButton.classList.remove("pressed");
